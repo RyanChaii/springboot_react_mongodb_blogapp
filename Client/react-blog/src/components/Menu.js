@@ -7,13 +7,14 @@ const Menu = () => {
     <ListGroup>
       <Row>
         <Col>
-          <Link to="/">Home</Link>
+          <Link className="list-group-item" to="/" style={{ backgroundColor: "gray", color: "white" }}>
+            Home
+          </Link>
         </Col>
         <Col>
-          <Link to="/add">Add Blog</Link>
-        </Col>
-        <Col>
-          <Link to="/update">Update Blog</Link>
+          <Link className="list-group-item" to="/add" style={{ backgroundColor: "gray", color: "white" }}>
+            Add Blog
+          </Link>
         </Col>
       </Row>
     </ListGroup>

@@ -14,10 +14,10 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Card body inverse style={{ backgroundColor: "#333", borderColor: "#333" }}>
+      <Card body inverse style={{ backgroundColor: "#333", borderColor: "#333", height: "1000px" }}>
         <ToastContainer />
         <Router>
-          <CardTitle>
+          <CardTitle className="display-2">
             <h3>Swee Chai Blog</h3>
           </CardTitle>
           <Container>
@@ -26,13 +26,15 @@ function App() {
                 <Menu />
               </Col>
             </Row>
-            <Col>
-              <Routes>
-                <Route path="/" component={AllBlogs} exact />
-                <Route path="/add" component={AddBlog} exact />
-                <Route path="/update" component={UpdateBlog} exact />
-              </Routes>
-            </Col>
+            <Row>
+              <Col>
+                <Routes>
+                  <Route path="/" element={<AllBlogs />} />
+                  <Route path="/add" element={<AddBlog />} />
+                  <Route path="/update" element={<UpdateBlog />} />
+                </Routes>
+              </Col>
+            </Row>
           </Container>
         </Router>
       </Card>

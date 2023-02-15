@@ -1,17 +1,19 @@
+import React, { useEffect, useState } from "react";
 import { CardBody, CardText, Container, Button, Card, CardTitle } from "reactstrap";
 import { Link } from "react-router-dom";
 
-const Blog = ({ blog }) => {
+const Blog = props => {
   return (
     <Card body inverse color="info">
       <CardBody>
-        <CardTitle className="font-weight-bold">{blog.title}</CardTitle>
-        <CardText>{blog.content}</CardText>
+        <CardTitle className="font-weight-bold">{props.blog.title}</CardTitle>
+        {console.log("hi")}
+        <CardText>{props.blog.content}</CardText>
         <Container>
-          <Link className="btn btn-primary" to="/update">
+          <Link className="btn btn-primary" to="/update" style={{ marginRight: "15px" }}>
             Edit
           </Link>
-          <Button>Delete</Button>
+          <Button color="danger">Delete</Button>
         </Container>
       </CardBody>
     </Card>
