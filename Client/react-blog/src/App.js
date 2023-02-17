@@ -14,7 +14,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Card body inverse style={{ backgroundColor: "#333", borderColor: "#333", height: "1000px" }}>
+      <Card body inverse style={{ backgroundColor: "#333", borderColor: "#333", height: "100%" }}>
         <ToastContainer />
         <Router>
           <CardTitle className="display-2">
