@@ -34,10 +34,6 @@ const Blog = props => {
     }
   }
 
-  // useEffect(() => {
-  //   getAllBlogs();
-  // }, []);
-
   return (
     <Card body inverse color="info">
       <CardBody>
@@ -46,7 +42,8 @@ const Blog = props => {
         </CardTitle>
         <CardText style={{ color: "black" }}>{props.blog.content}</CardText>
         <Container>
-          <Link className="btn btn-primary" to="/update" style={{ marginRight: "15px" }}>
+          {/* <Link className="btn btn-primary" to={{ pathname: "/update", state: { blogid: props.blog.blogId } }} style={{ marginRight: "15px" }}> */}
+          <Link className="btn btn-primary" to="/update" state={{ blogid: props.blog.blogId }} style={{ marginRight: "15px" }}>
             Edit
           </Link>
           <Button

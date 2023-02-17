@@ -14,6 +14,9 @@ const AddBlog = () => {
     e.preventDefault();
     const response = await Axios.post(`${base_url}/create`, { title: blogTitle, content: blogContent });
     console.log(response);
+    if (response.status === 200) {
+      toast.success(blogTitle + " have been created successfully", { autoClose: 2000 });
+    }
   }
 
   function clearBlog() {
