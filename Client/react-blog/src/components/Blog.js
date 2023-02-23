@@ -19,7 +19,7 @@ const Blog = props => {
     try {
       // API call to delete blog
       const response = await Axios.delete(`${base_url}/delete`, {
-        data: {
+        params: {
           blogId: props.blog.blogId
         }
       });

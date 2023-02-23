@@ -33,8 +33,6 @@ public class BlogService implements IBlogService {
     @Override
     public void deleteBlog(String id) {
         // TODO Auto-generated method stub
-        System.out.println("Number 1");
-        System.out.println(id);
         blogRepository.deleteById(id);
     }
 

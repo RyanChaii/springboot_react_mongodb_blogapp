@@ -41,10 +41,18 @@ public class BlogController {
     }
 
     // Get blog by id
+    // @CrossOrigin
+    // @GetMapping("/blogbyid")
+    // public Blog getBlogbyId(@RequestBody(required = false) Map<String, String> json){
+    //     System.out.println("Helloo");
+    //     var blogid = json.get("blogId");
+    //     return blogService.findById(blogid);
+    // }
+    @CrossOrigin
     @GetMapping("/blogbyid")
-    public Blog getBlogbyId(@RequestBody Map<String, String> json){
-        var blogid = json.get("blogId");
-        return blogService.findById(blogid);
+    public Blog getBlogbyId(@RequestParam("blogId") String id){
+
+        return blogService.findById(id);
     }
 
     // Create new blog
@@ -56,8 +64,10 @@ public class BlogController {
     }
 
     // Update blog
+    @CrossOrigin
     @PutMapping("/update")
     public Blog update(@RequestBody Blog blog){
+        System.out.println(blog);
         return blogService.updateBlog(blog);
     }
 
@@ -66,9 +76,6 @@ public class BlogController {
     @DeleteMapping("/delete")
     @ResponseStatus(HttpStatus.OK)
     public void deleteById(@RequestParam("blogId") String id){
-        // public void deleteById(@RequestBody Map<String, String> json){
-        // System.out.println("hi");
-        // var deleteid = json.get("blogId");
         blogService.deleteBlog(id);
 
     }
